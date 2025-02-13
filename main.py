@@ -41,7 +41,7 @@ st.markdown('<h1 class="big-heading">Happy Valentine</h1>', unsafe_allow_html=Tr
 st.markdown('<h1 class="lower-heading">My Love Nguyễn Hoàng Bảo Châu</h1>', unsafe_allow_html=True)
 
 #  Load Home Page Image Using GitHub Raw URL
-image_url = "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/home_page_pic.JPG"
+image_url = "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/home_page_pic.JPG"
 
 try:
     response = requests.get(image_url)

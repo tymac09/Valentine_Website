@@ -41,7 +41,7 @@ def resize_image(image, target_size=(800, 600)):
     return image.resize(target_size, Image.ANTIALIAS)
 
 # Top Image
-top_image_url = "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/hoian_top.JPG"
+top_image_url = "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/hoian_top.JPG"
 
 try:
     response = requests.get(top_image_url)
@@ -53,16 +53,16 @@ except Exception as e:
 
 # List of Image URLs
 image_urls = [
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/hoian_1.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/hoian_2.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/hoian_3.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/hoian_4.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/hoian_5.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/hoian_6.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/hoian_7.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/hoian_8.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/hoian_9.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/hoian_10.JPG"
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/hoian_1.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/hoian_2.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/hoian_3.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/hoian_4.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/hoian_5.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/hoian_6.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/hoian_7.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/hoian_8.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/hoian_9.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/hoian_10.JPG"
 ]
 
 # Messages for each image

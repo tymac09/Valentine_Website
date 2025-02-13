@@ -41,7 +41,7 @@ def resize_image(image, target_size=(800, 600)):
     return image.resize(target_size, Image.ANTIALIAS)
 
 # Load Top Image (Using GitHub Raw URL)
-top_image_url = "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/saigon_heading.jpeg"
+top_image_url = "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/saigon_heading.jpeg"
 
 try:
     response = requests.get(top_image_url)
@@ -53,14 +53,14 @@ except Exception as e:
 
 # List of Image URLs (Stored in GitHub)
 image_urls = [
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/saigon_1.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/saigon_2.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/saigon_3.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/saigon_4.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/saigon_5.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/saigon_6.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/saigon_7.JPG",
-    "https://raw.githubusercontent.com/tymac09/Valentine-Web/main/pictures/saigon_8.JPG"
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/saigon_1.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/saigon_2.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/saigon_3.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/saigon_4.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/saigon_5.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/saigon_6.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/saigon_7.JPG",
+    "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/saigon_8.JPG"
 ]
 
 # Messages for each image
