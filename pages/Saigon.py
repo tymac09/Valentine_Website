@@ -3,6 +3,9 @@ from PIL import Image
 import requests
 from io import BytesIO
 
+# Define the target image size
+IMAGE_SIZE = (800, 900)  # Width x Height
+
 # Custom CSS for styling
 st.markdown(
     """
@@ -36,18 +39,14 @@ st.markdown(
 # Page Title
 st.markdown('<h1 class="big-heading">Saigon Memories 🌆</h1>', unsafe_allow_html=True)
 
-# Function to resize images to a fixed size
-def resize_image(image, target_size=(800, 600)):  
-    return image.resize(target_size, Image.ANTIALIAS)
-
 # Load Top Image (Using GitHub Raw URL)
 top_image_url = "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/saigon_heading.jpeg"
 
 try:
     response = requests.get(top_image_url)
     top_image = Image.open(BytesIO(response.content))
-    top_image = resize_image(top_image)  # Resize before displaying
-    st.image(top_image, use_container_width=True)
+    top_image = top_image.resize(IMAGE_SIZE, Image.LANCZOS)
+    st.image(top_image, use_container_width=False)
 except Exception as e:
     st.write("⚠️ Top image not found or failed to load.")
 
@@ -66,7 +65,7 @@ image_urls = [
 # Messages for each image
 messages = [
     "I love you so much my baby. I know we are not together for Valentine but I want you to know we will be together soon.",
-    "So here’s a trip down memory lane.",
+    "So here is a trip down memory lane.",
     "Our time together in the city was amazing and lovely.",
     "In the city that never sleeps, my love for you will never stop."
 ]
@@ -79,8 +78,8 @@ for i in range(4):  # 4 rows, 2 images per row (left & right)
         try:
             response = requests.get(image_urls[i])
             image = Image.open(BytesIO(response.content))
-            image = resize_image(image)  # Resize before displaying
-            st.image(image, use_container_width=True)
+            image = image.resize(IMAGE_SIZE, Image.LANCZOS)
+            st.image(image, use_container_width=False)
         except Exception as e:
             st.write("⚠️ Image not found.")
 
@@ -91,7 +90,7 @@ for i in range(4):  # 4 rows, 2 images per row (left & right)
         try:
             response = requests.get(image_urls[i + 4])  # Ensuring correct indexing for right images
             image = Image.open(BytesIO(response.content))
-            image = resize_image(image)  # Resize before displaying
-            st.image(image, use_container_width=True)
+            image = image.resize(IMAGE_SIZE, Image.LANCZOS)
+            st.image(image, use_container_width=False)
         except Exception as e:
             st.write("⚠️ Image not found.")

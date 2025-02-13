@@ -3,6 +3,9 @@ from PIL import Image
 import requests
 from io import BytesIO
 
+# Define the target image size
+IMAGE_SIZE = (800, 700)  # Width x Height
+
 # Custom CSS for styling
 st.markdown( 
     """
@@ -36,18 +39,14 @@ st.markdown(
 # Page Title
 st.markdown('<h1 class="big-heading">Hoi An Memories 🌊</h1>', unsafe_allow_html=True)
 
-# Function to resize images to a fixed size
-def resize_image(image, target_size=(800, 600)):  
-    return image.resize(target_size, Image.ANTIALIAS)
-
 # Top Image
 top_image_url = "https://raw.githubusercontent.com/tymac09/Valentine_Website/main/pictures/hoian_top.JPG"
 
 try:
     response = requests.get(top_image_url)
     top_image = Image.open(BytesIO(response.content))
-    top_image = resize_image(top_image)  # Resize before displaying
-    st.image(top_image, use_container_width=True)
+    top_image = top_image.resize(IMAGE_SIZE, Image.LANCZOS)  # Resize before displaying
+    st.image(top_image, use_container_width=False)
 except Exception as e:
     st.write("⚠️ Top image not found or failed to load.")
 
@@ -69,7 +68,7 @@ image_urls = [
 messages = [
     "I love you so much more baby.",
     "Our trip to Hoi An was amazing and I loved every second and every day being with you.",
-    "I remember our walked on the beach and feeling the nice breeze and holding your hands.",
+    "I remember our walk on the beach and feeling the nice breeze and holding your hands.",
     "Going into the beach and holding you in my arm is a memory I will never forget.",
     "Thank you for being my amazing love, my beautiful girlfriend, and my perfect wife. You are the love of my life."
 ]
@@ -82,8 +81,8 @@ for i in range(5):
         try:
             response = requests.get(image_urls[i])
             image = Image.open(BytesIO(response.content))
-            image = resize_image(image)  # Resize before displaying
-            st.image(image, use_container_width=True)
+            image = image.resize(IMAGE_SIZE, Image.LANCZOS)
+            st.image(image, use_container_width=False)
         except Exception as e:
             st.write("⚠️ Image not found.")
 
@@ -94,7 +93,7 @@ for i in range(5):
         try:
             response = requests.get(image_urls[i + 5])
             image = Image.open(BytesIO(response.content))
-            image = resize_image(image)  # Resize before displaying
-            st.image(image, use_container_width=True)
+            image = image.resize(IMAGE_SIZE, Image.LANCZOS)
+            st.image(image, use_container_width=False)
         except Exception as e:
             st.write("⚠️ Image not found.")
